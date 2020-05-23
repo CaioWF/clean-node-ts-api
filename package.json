@@ -18,6 +18,7 @@
     "typescript": "^3.9.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:staged": "jest"
   }
 }
