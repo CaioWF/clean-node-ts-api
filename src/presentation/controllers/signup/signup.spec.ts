@@ -1,9 +1,16 @@
 /* eslint-disable max-classes-per-file */
-import { InvalidParamError, MissingParamError, ServerError } from '../errors';
-import { EmailValidator } from '../protocols';
+import {
+  InvalidParamError,
+  MissingParamError,
+  ServerError,
+} from '../../errors';
 import SignUpController from './signup';
-import { AccountModel } from '../../domain/models/account';
-import { AddAccountModel, AddAccount } from '../../domain/usecases/add-account';
+import {
+  AccountModel,
+  AddAccount,
+  AddAccountModel,
+  EmailValidator,
+} from './signup-protocols';
 
 interface SutTypes {
   sut: SignUpController;
