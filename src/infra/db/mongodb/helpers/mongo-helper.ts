@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { MongoClient } from 'mongodb';
+import { MongoClient, Collection } from 'mongodb';
 
 export const MongoHelper = {
   client: null as MongoClient,
@@ -13,5 +13,9 @@ export const MongoHelper = {
 
   async disconnect() {
     await this.client.close();
+  },
+
+  getCollection(name: string): Collection {
+    return this.client.db().collection(name);
   },
 };
