@@ -5,8 +5,10 @@
   "author": "caiowf <caioweliton@alu.ufc.br>",
   "license": "MIT",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
     "@types/bcrypt": "^3.0.0",
     "@types/jest": "^25.2.3",
+    "@types/mongodb": "^3.5.18",
     "@types/node": "^14.0.5",
     "@types/validator": "^13.0.0",
     "eslint": "^7.1.0",
@@ -29,6 +31,7 @@
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "mongodb": "^3.5.8",
     "validator": "^13.0.0"
   }
 }
