@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import { Controller, HttpRequest } from '../../presentation/protocols';
 
-// eslint-disable-next-line import/prefer-default-export
-export const adaptRoute = (controller: Controller) => {
+export default (controller: Controller) => {
   return async (req: Request, res: Response) => {
     const httpRequest: HttpRequest = {
       body: req.body,
