@@ -17,23 +17,16 @@ export default class LoginController implements Controller {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
+      const requiredFields = ['email', 'password'];
+      for (const field of requiredFields) {
+        if (!httpRequest.body[field]) {
+          return badRequest(new MissingParamError(field));
+        }
+      }
       const { email, password } = httpRequest.body;
-      if (!email) {
-        return new Promise((resolve) =>
-          resolve(badRequest(new MissingParamError('email'))),
-        );
-      }
-      if (!password) {
-        return new Promise((resolve) =>
-          resolve(badRequest(new MissingParamError('password'))),
-        );
-      }
-
       const isValid = this.emailValidator.isValid(email);
       if (!isValid) {
-        return new Promise((resolve) =>
-          resolve(badRequest(new InvalidParamError('password'))),
-        );
+        return badRequest(new InvalidParamError('password'));
       }
 
       await this.authentication.auth(email, password);
