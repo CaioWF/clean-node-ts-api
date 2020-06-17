@@ -9,6 +9,7 @@ import {
   badRequest,
   serverError,
   unauthorized,
+  ok,
 } from '../../helpers/http-helper';
 import { MissingParamError, InvalidParamError } from '../../errors';
 
@@ -41,10 +42,7 @@ export default class LoginController implements Controller {
       if (!accessToken) {
         return unauthorized();
       }
-      return {
-        statusCode: 200,
-        body: {},
-      };
+      return ok({ accessToken });
     } catch (error) {
       return serverError(error);
     }
