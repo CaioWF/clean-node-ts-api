@@ -23,7 +23,6 @@ export default class LoginController implements Controller {
     this.authentication = authentication;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const requiredFields = ['email', 'password'];
