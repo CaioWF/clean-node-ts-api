@@ -5,7 +5,7 @@ import {
   HttpResponse,
   AddAccount,
 } from './signup-protocols';
-import { Validation } from '../../helpers/validators/validation';
+import { Validation } from '../../protocols/validation';
 
 export default class SignUpController implements Controller {
   private readonly addAccount: AddAccount;
