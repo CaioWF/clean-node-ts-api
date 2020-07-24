@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { ok, serverError, badRequest } from '../../helpers/http-helper';
+import { ok, serverError, badRequest } from '../../helpers/http/http-helper';
 import { MissingParamError, ServerError } from '../../errors';
 import SignUpController from './signup';
 import {
